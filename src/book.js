@@ -14,26 +14,35 @@ function buildMainCharacter (name, age, pronouns) {
   };
 };
 
-// *redo?
-function saveReview(addReviews, reviews) {
-  if (reviews.indexOf(addReviews) === -1) {
-    return reviews.push(addReviews);
-  } else (reviews.indexOf(addReviews) > -1)
-    return reviews;
-};
 
+function saveReview(addReviews, reviews) {
+  for (var i = 0; i <= reviews.length; i++) {
+    if (addReviews !== reviews[i]) {
+      return reviews.push(addReviews);
+    } else {
+      return reviews;
+    }
+  }
+}
 
 function calculatePageCount(bookPageCount, bookTitle) {
     return bookPageCount.length * 20;
 };
 
 
-function writeBook(bookTitle, bookCharacter, book) {
-  return writeBook = {
-    bookTitle: bookTitle,
+function writeBook(bookTitle, bookCharacter, genre) {
+  return book = {
+    title: bookTitle,
     mainCharacter: bookCharacter,
-    book: genre
+    pageCount: calculatePageCount(bookTitle),
+    genre: genre,
   };
+};
+
+
+function editBook(book) {
+  book.pageCount = book.pageCount * .75;
+  return book
 };
 
 
@@ -43,5 +52,5 @@ module.exports = {
   saveReview,
   calculatePageCount,
   writeBook,
-  // editBook
+  editBook
 }
