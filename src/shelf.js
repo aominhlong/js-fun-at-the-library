@@ -16,28 +16,32 @@ function unshelfBook(bookName, sciFiShelf) {
 
 
  var arrayTitles = [];
-
 function listTitles(titles) {
   for (var i = 0; i < titles.length; i++) {
     arrayTitles.push(titles[i].title)
   }
-  return arrayTitles.join(', ');
+  return arrayTitles.join(", ");
 };
 
 
 // sciFiShelf = array hyperion and dune objects
 // title = Hyperion
 // need .includes() ???
+// sciFiShelf[i].title = hyperion, dune strings
 
-function searchShelf(sciFiShelf, title) {
-  console.log(';lkasdjf;asjdf;jsal;df', sciFiShelf[i].title);
+function searchShelf(sciFiShelf, titleBook) {
   for (var i = 0; i < sciFiShelf.length; i++) {
+    if (sciFiShelf[i].title === titleBook) {
+      return true
+    }
   }
+      return false
 };
 
-// access the array -> object -> titles
+// access the array -> object -> titles yes
 // includes() access
 
+// sciFiShelf.includes(titles) returns false
 
 module.exports = {
    shelfBook,
