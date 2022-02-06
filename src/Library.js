@@ -33,12 +33,14 @@ function addBook(library, book) {
 
 
 function checkoutBook(library, bookTitle, genre) {
-  if (bookTitle === library.shelves[genre].title) {
-    library.shelves[genre].splice(0, 1)
-    return `You have now checked out ${bookTitle} from ${library}`
+  for (var i = 0; i <= library.shelves[genre].length -1; i++) {
+  if (bookTitle === library.shelves[genre][i].title) {
+    library.shelves[genre].splice(i, 1)
+    return `You have now checked out ${bookTitle} from the ${library.name}`
   }
-  };
-
+};
+    return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}`
+}
 
   // [genre] => accessing a genre
 
